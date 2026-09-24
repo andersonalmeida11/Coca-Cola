@@ -1,0 +1,156 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    background: linear-gradient(270deg, #E61C73 0%, #FFFFFF 50%, #004B93 100%);
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+
+}
+
+.header{
+    
+    height: 60px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+}
+
+.menu-click-area {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+}
+
+.header {
+    position: relative;
+    z-index: 101; /* Fica acima dos elementos posicionados como absolute */
+}
+
+.sub-menu {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 12px 20px;
+    border-radius: 6px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.sub-menu a {
+    color: white;
+    text-decoration: none;
+    font-family: 'montserrat';
+    font-weight: 500;
+    font-size: 15px;
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+.sub-menu a:hover {
+    color: #E61C73; /* Cor rosa do Guaraná Jesus no hover */
+}
+
+#bt_menu:checked ~ .header .sub-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    background: linear-gradient(270deg, #E61C73 0%,  #004B93 100%);
+
+
+}
+
+.menu-text{
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+    font-family: 'montserrat';
+        
+}
+
+.main{
+    
+    background-image: url(/Coca-cola/img/logo_guarana-jesus.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    opacity: 0.3;
+}
+
+.garrafa{    
+    position: absolute;
+    height: 85vh;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(220px);
+}
+
+.frase-container{
+    position: absolute;
+    top: 25%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.frase{
+    position: absolute;
+    color: white;
+    font-family: 'montserrat';
+    font-weight: bold;
+    font-size: 48px;
+    width: 200px;
+    transform: translateX(-250px);
+    text-align: center;
+    margin-left: 10%;
+
+}
+
+.footer{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 60px;}
+
+
+@media (max-width: 768px){
+    .body{
+        padding: 24px;
+    }
+    .garrafa{
+        height: 70vh;
+        bottom: 100px;
+        position: relative;
+        right: 60px;
+        width: 100%;
+    }
+    .main{
+        align-items: flex-start;
+    }
+    
+    .frase{
+        transform: translatex(-130px);
+        top: 80px;
+        font-size: 24px;
+        width: 150px;
+        text-align: left;
+        margin-right: 10%;
+    }
+    
+}
